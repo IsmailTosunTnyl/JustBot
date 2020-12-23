@@ -11,6 +11,7 @@ public class Main {
         Dotenv dotenv = Dotenv.load();
        jda = JDABuilder.createDefault(dotenv.get("TOKEN")).build();
         jda.addEventListener(new SoundPlayer());
+        jda.addEventListener(new AdminListener(dotenv,jda));
 
 
 
