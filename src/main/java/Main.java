@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Dotenv dotenv = Dotenv.load();
-       jda = JDABuilder.createDefault(dotenv.get("TOKEN")).build();
+       jda = JDABuilder.createDefault(System.getenv("TOKEN")).build();
         jda.addEventListener(new SoundPlayer());
         jda.addEventListener(new AdminListener(dotenv,jda));
 
